@@ -17,7 +17,12 @@ body .wrapper{
     justify-content: space-evenly;
     align-items:center;
 }
-
+.wrapper button{
+    position:absolute;
+    top:3%;
+    left:10%;
+    padding:10px 25px 10px 25px;
+}
 .wrapper .container{
     height:80%;
     width:20%;
@@ -29,6 +34,14 @@ body .wrapper{
     align-items:center;
     padding-bottom:3px;
 }
+
+.container h2{
+    color:white;
+    height:10px;
+    margin-top: 0px;
+}
+
+
 
 .container .content-box{
     flex:1;
