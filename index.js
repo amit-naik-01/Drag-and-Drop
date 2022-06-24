@@ -18,7 +18,7 @@ function dragStart() {
 function dragEnd() {
   draggableTodo = null;
   setTimeout(() => {
-    this.style.display = "block";
+    this.style.display = "flex";
   }, 0);
   console.log("dragEnd");
 }
@@ -31,22 +31,23 @@ containers.forEach((status) => {
 });
 
 function dragOver(e) {
+  this.style.backgroundColor = "#CCCCCC";
   e.preventDefault();
   //   console.log("dragOver");
 }
 
 function dragEnter() {
-  this.style.border = "1px dashed #ccc";
+  this.style.backgroundColor = "#EEEEEE" ;
   console.log("dragEnter");
 }
 
 function dragLeave() {
-  this.style.border = "none";
+  this.style.backgroundColor = "#EEEEEE" ;
   console.log("dragLeave");
 }
 
 function dragDrop() {
-  this.style.border = "none";
+  this.style.backgroundColor = "#EEEEEE" ;
   this.appendChild(draggableTodo);
   console.log("dropped");
 }
