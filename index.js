@@ -12,7 +12,7 @@ function dragStart() {
   setTimeout(() => {
     this.style.display = "none";
   }, 0);
-  console.log("dragStart");
+
 }
 
 function dragEnd() {
@@ -20,7 +20,7 @@ function dragEnd() {
   setTimeout(() => {
     this.style.display = "flex";
   }, 0);
-  console.log("dragEnd");
+  
 }
 
 containers.forEach((status) => {
@@ -33,31 +33,27 @@ containers.forEach((status) => {
 function dragOver(e) {
   this.style.backgroundColor = "#CCCCCC";
   e.preventDefault();
-  //   console.log("dragOver");
 }
 
 function dragEnter() {
   this.style.backgroundColor = "#EEEEEE" ;
-  console.log("dragEnter");
 }
 
 function dragLeave() {
   this.style.backgroundColor = "#EEEEEE" ;
-  console.log("dragLeave");
 }
 
 function dragDrop() {
   this.style.backgroundColor = "#EEEEEE" ;
   this.appendChild(draggableTodo);
-  console.log("dropped");
 }
 
 /* modal */
-const btns = document.querySelectorAll("[data-target-modal]");
+const modalButtons = document.querySelectorAll("[data-target-modal]");
 const close_modals = document.querySelectorAll(".close-modal");
 const overlay = document.getElementById("overlay");
 
-btns.forEach((btn) => {
+modalButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     document.querySelector(btn.dataset.targetModal).classList.add("active");
     overlay.classList.add("active");
@@ -93,7 +89,7 @@ function createTodo() {
   todo_div.appendChild(txt);
   todo_div.classList.add("todo");
   todo_div.setAttribute("draggable", "true");
-  // console.log(todo_div)
+
 
   /* create span */
   const span = document.createElement("span");
@@ -108,7 +104,6 @@ function createTodo() {
   span.addEventListener("click", () => {
     span.parentElement.style.display = "none";
   });
-  //   console.log(todo_div);
 
   todo_div.addEventListener("dragstart", dragStart);
   todo_div.addEventListener("dragend", dragEnd);
@@ -118,9 +113,9 @@ function createTodo() {
   overlay.classList.remove("active");
 }
 
-const close_btns = document.querySelectorAll(".close");
+const closeButtons = document.querySelectorAll(".close");
 
-close_btns.forEach((btn) => {
+closeButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     btn.parentElement.style.display = "none";
   });
